@@ -1,0 +1,21 @@
+Distributions
+
+Set of all possible random variables
+
+Example:
+Flipping Coins: Binomial Distributions, Discrete, Evenly Weighted
+
+Central tendency: Mean, median, mode
+
+Variability: Standard Deviation, Inter-quartile range
+
+Kurtosis: Negative - curve is slightly flat, Positive - slightly more peaky
+
+Chi Squared Distribution
+
+    Left-Skewed
+    Degrees of freedom
+
+Hypothesis Testing
+
+
