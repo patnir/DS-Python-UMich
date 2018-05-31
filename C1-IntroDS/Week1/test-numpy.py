@@ -6,5 +6,7 @@ y = np.diag(x)
 print(y)
 
 print(a.repeat(3))
-print(np.array(a. * 3))
+print(np.array(a * 3))
 print(np.array([1, 2, 3] * 3))
+
+print(['a', 'b', 'c'] + [1, 2, 3])

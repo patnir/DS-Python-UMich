@@ -6,6 +6,8 @@ Introduction to Data Science
 
 [50 years of Data Science](http://courses.csail.mit.edu/18.337/2015/docs/50YearsDataScience.pdf)
 
+[Data Skeptic Podcast - ML Reference](http://www.dataskeptic.com/)
+
 
 #####Six Divisions of Data Science: 
 

@@ -29,6 +29,7 @@ def split_title_and_name_lambda(person):
 
 func = lambda person: person.split()[0] + ' ' + person.split()[-1]
 
+print(type(func))
 
 for person in people:
     print(split_title_and_name_lambda(person) == func(person))
