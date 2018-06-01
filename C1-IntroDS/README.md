@@ -1,4 +1,4 @@
-Introduction to Data Science
+# Introduction to Data Science
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
@@ -9,13 +9,14 @@ Introduction to Data Science
 [Data Skeptic Podcast - ML Reference](http://www.dataskeptic.com/)
 
 
-#####Six Divisions of Data Science: 
+##### Six Divisions of Data Science: 
 
-⋅⋅1. Data Exploration and Preparation
-⋅⋅2. Data Representation and Transformation
-⋅⋅3. Computing with Data
-⋅⋅4. Data Modeling
-⋅⋅5. Data Visualization and Presentation
-⋅⋅6. Science about Data Science
+1. Data Exploration and Preparation
+2. Data Representation and Transformation
+3. Computing with Data
+4. Data Modeling
+5. Data Visualization and Presentation
+6. Science about Data Science
+
 
 Rahul Patni
