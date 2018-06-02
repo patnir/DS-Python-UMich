@@ -1,0 +1,13 @@
+Backend Layer
+- Deals with the rendering of plots to screen or files
+- In Jupyter notebooks we use the inline backend
+
+Artist Layer
+- Contains containers such as Figure, Subplot, and Axes
+- Contains primitives, such as Line3D, and collections such as Path Collection
+
+Scripting Layer
+- PyPlot, Simplifies access to the Artist and Backend layer
+
+Pyplot: Procedural method for visualization
+
