@@ -8,3 +8,7 @@
 
 
 [Ten Simple Rules for Better Figures](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833)
+
+[Selecting the Number of Bins in a Histogram: A Decision Theoretic Approach](http://users.stat.umn.edu/~gmeeden/papers/hist.pdf)
+
+
