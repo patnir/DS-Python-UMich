@@ -1,0 +1,28 @@
+Feature representation: used to predict label for each instance of data
+Data instances/ samples/ examples (X)
+Target value(y)
+
+Training and test sets
+Model/ Estimator
+- Model fitting produces a trained model
+- Training is the process of estimating model parameters
+Evaluation method
+
+Classification vs Regression
+Discrete vs Continuous values
+
+Supervised learning methods:
+KNN: Few assumptions about he structure of the data. Unstables predictions possible since it is sensitive to small changes in the training data
+Linear: makes strong assumptions about eh structure of the data and give stable but potentially inaccurate predictions
+
+Inverted U relationship between model accuracy (y axis) and model complexity (x axis) for test set scores. More complex the model, however, the better the training set accuracy (memorizing the data)
+
+Independent (feature) values
+Dependent (target) values
+
+Generalization, Overfitting and Underfitting:
+
+Assumptions: 
+- future unseen data has similar properties as current training sets
+- models that are accurate on the training set are expected to be accurate on the test set
+- but that may not happen if the trained model is tuned too specifically to the training set (overfitting)
