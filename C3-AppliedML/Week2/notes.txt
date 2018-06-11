@@ -26,3 +26,96 @@ Assumptions:
 - future unseen data has similar properties as current training sets
 - models that are accurate on the training set are expected to be accurate on the test set
 - but that may not happen if the trained model is tuned too specifically to the training set (overfitting)
+
+Knn classifier: as we decrease k, we increase risk of overfitting
+
+Supervised Learning: Datasets as exmaples
+
+R^2 regression score
+- measures how well a prediction model for regression fits the given data
+- The score is between 0 and 1
+- Also known as coefficient of determination 
+
+Linear model: 
+Sum of weighted variables that predicts a target output value given an input data instance. 
+x = (x0, x1...) features
+w = efature weights/ model coefficients
+b = constant bias term
+y = w0x0 + w1x1 + ... + b
+
+How to estimate w & b
+Least squares linear regression 
+("ordinary least squares")
+Find w and b that minimizes the mean squared error of the model: the sum of squared differences between predicted target actual target values
+
+The learning algorithm finds the parameters that optimizw an objective function, typically to minimizw son kind of loss function of hte predicted target values vs. actual values
+
+No parameters to control model complexity. The linear model always uses input training data and is always a linear 
+
+Linear regression: Rideg, Lasso and Polynomial Regression
+
+Ridge regression: Learns w,b using the same least-squares criterion but adds a penalty for large variation in w parameters
+Regularization: prevents overfitting by restricting the model, typically to reduce its complexity. 
+
+Need for feature preprocessing
+
+MinMax scaling: Change all variables so they value beteween 0 and 1 
+
+Feature Normalization: The test set must use identical scaling to the training set. 
+Regularization is not effective is you have larger datasets. 
+
+Lasso regression: L1 penality: Effect of setting parameter weights in w to zero for the least influential variables. This is called a sparse solution: a kind of  feature selection. 
+
+Polynomial Feature with Linear Regression
+Generature new features consisting of all polynomial combinations of the orgiinal two features. 
+The degree of the polynomial specifies how many variables participate at a time in each new feature. This is still a weighted linear combinatino of features, so it's still a linear model, and can use same least-squares estimatino method for w and b 
+
+Logistic Regression: 
+(Used for classification)
+
+Target value is a binary value, instead of a continuous value. 
+
+Support Vector Machines: 
+
+CLassifier margin: Defined as the maximum width the decision boundary area can be increased before hitting a data point. 
+
+Maximum margin classifier: The linear classifier width maximum margin in a linear support vector machine. 
+
+Linear Models: Pros: 
+
+SImple and easy to train, fast prediction, scales well to very large datasets. Works well with sparse data. Reason for prediction are relatively easy to interpret
+Cons: For loewr dimensional data, other models have superior generalization performance. For classification, data may not be linearly separable
+
+Multi Class CLassification: 
+
+n different binary classifier, the one with the highest score will be the assigned class. 
+
+Kernelized SUpport Vector Machines (SVMs)
+
+Extension of LSVM
+
+Simple 1-D classification problem for a linear classifier. 
+
+Pros: 
+Can perform well on a range of datasets
+Versatile: different kernel function can be specified, or custom kernels can be defined for specific data types. Works well for both low and high-dimensional data. 
+Consts: Efficiency decreases as training set size increases
+Needs careful normalization of input data and aprameter tuning. 
+Does not provide direct probability estimates 
+Difficult to interpret why a perdiction was made. 
+
+Decision Trees:
+Pros:
+Easily visualized and interpreted
+No feature normalization or scaling typically needed
+Work well with datasets using a misture of feature types - continuous, categorical, binary
+
+Cons: 
+Even after tuning decision trees can often still overfit
+Usually need an ensemble of trees for better generalization performance
+
+Parameters to control decision trees:
+max_depth: controls maximum depth, most comman way to reduce tree complexity and overfitting
+min_sample_left: threshold for teh minimum # of data instances a leaf can have to avoid further splitting
+max_leaf_nodes: limts total number of leaves in the tree
+
