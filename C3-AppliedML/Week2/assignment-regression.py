@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Lasso, LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics.regression import r2_score
 
@@ -111,4 +111,20 @@ def answer_three():
     return res  # Return your answer
 
 
-print(answer_three())
+def answer_four():
+    degree = 12
+    poly = PolynomialFeatures(degree=degree)
+    x_fit = poly.fit_transform(X_train.reshape(-1, 1))
+    x_test_fit = poly.fit_transform(X_test.reshape(-1, 1))
+    model = LinearRegression()
+    model.fit(x_fit, y_train)
+    y_linear_pred = model.predict(x_test_fit)
+    r_linear = r2_score(y_test, y_linear_pred)
+    lasso = Lasso(alpha=0.01, max_iter=10000)
+    lasso.fit(x_fit, y_train)
+    y_lasso_pred = lasso.predict(x_test_fit)
+    r_lasso = r2_score(y_test, y_lasso_pred)
+    ans = (r_linear, r_lasso)
+    return ans
+
+
