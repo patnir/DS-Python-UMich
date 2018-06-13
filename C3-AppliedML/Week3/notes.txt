@@ -1,0 +1,191 @@
+Lecture 1: Model Evaluation & Selection
+
+Represent/Train/Evaulate/Refine
+
+Imbalanced Class Scenario: 
+	Which transactions are fraud
+	Which product out of millions is relevant to a particular user
+	Accuracy is really high - 99.9% or 99.9% of stuff is not releveant
+
+Dummy classifier: useful sanity check, picks the most frequent label. 
+	most_frequent: predicts teh most frequent label in the training set
+	stratified: random predictions based on training set class distribution
+	uniform: generates predictions uniformly at random
+	constant: always predicts a constant label provided by the user
+
+What is my classifier is close to the null accuracy baseline?
+
+This could be a sign of: 
+	- Ineffective, erroneous or missing features
+	- Poor choice of kernel or hyperparameter
+	- Large class imbalance
+
+DUmmy regresoors - strategy parameter options:
+	- mean: predicts teh mean of the training targets
+	- median: predicts the median of the training targets
+	- quantile: predicts a user-provided quantile of the training targets
+	- constant: predicts a constant user-provided value
+
+Type 1 error: False positive
+Type 2 error: False negative
+
+Binary Prediction Outcomes: 
+
+True negative	TN 						FP
+True positive 	FN 						TP
+				Predicted negative		Predicted Positive
+
+
+Lecture 2: Confusion Matrices & Basic Evaluation Metrics
+
+Precision & Recall Trade Off
+
+Precision = TP / (TP + FP) [wanna be 100 sure before recommending something, face detection]
+Recall = TP / (TP + TN) [wanna be on the safe side, tumor detection]
+
+Beta = Precision/ Recall tradeoff = 0.5 (false positives hurt performance more than false negatives) [More precision]
+= 2 (false negatives hurt perforamce more than false positives) [More recall]
+
+Precision oriented ML: 
+- Search engine ranking, query suggestion
+- Document classification
+- Many customer-facing tasks
+
+Recall-oriented machine learning tasks: 
+- Search and information extractino in legal discovery
+- Tumor detection
+- Often paired with a human expert to filter out false positives
+
+
+Multi-Class Evaluation:
+
+Overall evaluation metrics are average across classes
+- But there are different ways to averages 
+- The support for each class is important to consider (number of instances)
+
+Macro-average: each class has equal weight
+1) compute metric within each class
+2) average resulting metrics across classes
+
+Micro-average precision: 
+1) Treat entire dataset as one
+
+Macro vs Micro average
+Same number of instances, macro and micro average will be about the same
+Some classes are much larger than others:  
+- weight your metric towards the largest ones, use micro-averaging
+- weight your metric towards teh smallest ones, use macro averaging
+
+If the micro is lower than macro, then examint he larger classes for poor metric performance
+If macro is larger than micro, then examine smaller classes for poor metric performance
+
+Regression Evaluation: 
+
+Metrics:
+Typically r2_score is enough
+Alternative metrics: 
+- mean_absolute_error
+- mean_sqaured-error
+- median_absolute_error (robust to outliers)
+
+Model Selection: Optimizing Classifiers for Different Evaluation Metrics
+
+Training, Validation, and Test Framework for Model Selection and Evaluation
+- Using only cross validation or a test set to do model selection may lead to more subtle overfitting/ optimistic generalization estimates
+- Instead use three data splits: 
+	Training set (model building)
+	Validation set (model selection)
+	Test set (final evaluation)
+
+In practice: 
+	- Create an initial train/test split
+	- Do cross-validation on the training data for model/parameter selection
+	- Save the held-out test set for final model evaluation
+
+Concluding Notes: 
+Accuracy is often not the right evaluation metric for many real-world machine learning tasks
+- False positives and false negatives may need to be trated very differently
+- Make sure you understand the needs of your application and choose an evaluation metric that matches your application, user, or business goals
+
+Examples: 
+- Learning curve: how much does accuracy change as a function of the amount of training dat?
+- Sensitivity analysis: How much does accuracy (or other metric) change as a functino of key learning parameter values?
+
+
+Quiz answers
+1) .99
+2) 0.906
+3) 0.923
+4) 0.835 Wong
+
+5)
+
+print(m)
+
+y_res = m.predict(X_test)
+print(y_res.shape)
+
+precision, recall, thresholds = precision_recall_curve(y_test, y_res)
+closest_zero = np.argmin(np.abs(thresholds))
+closest_zero_p = precision[closest_zero]
+closest_zero_r = recall[closest_zero]
+
+plt.figure()
+plt.xlim([0.0, 1.01])
+plt.ylim([0.0, 1.01])
+plt.plot(precision, recall, label='Precision-Recall Curve')
+plt.plot(closest_zero_p, closest_zero_r, 'o', markersize = 12, fillstyle = 'none', c='r', mew=3)
+plt.xlabel('Precision', fontsize=16)
+plt.ylabel('Recall', fontsize=16)
+plt.axes().set_aspect('equal')
+plt.show()
+
+0.6
+
+6) 2
+7) 1 Wrong
+
+8)
+print(m)
+
+y_res = m.predict(X_test)
+
+precision_score(y_test, y_res, average = 'micro')
+
+9) 1, 3
+10) 2
+11) 3
+12) 1
+ 
+13) Wrong
+
+print(m)
+grid_values = {'gamma': [0.01, 0.1, 1, 10]}
+grid_clf_acc = GridSearchCV(m, param_grid = grid_values, scoring = 'recall')
+grid_clf_acc.fit(X_train, y_train)
+y_res = grid_clf_acc.predict(X_test) 
+recall = recall_score(y_res, y_test)
+precision = precision_score(y_res, y_test)
+print(recall)
+print(precision)
+print(recall - precision)
+
+0.113
+
+
+14) Wrong
+
+print(m)
+grid_values = {'gamma': [0.01, 0.1, 1, 10]}
+grid_clf_acc = GridSearchCV(m, param_grid = grid_values, scoring = 'precision')
+grid_clf_acc.fit(X_train, y_train)
+y_res = grid_clf_acc.predict(X_test) 
+recall = recall_score(y_res, y_test)
+precision = precision_score(y_res, y_test)
+print(recall)
+print(precision)
+print(recall - precision)
+0.167
+
+
+
