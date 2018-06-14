@@ -16,6 +16,24 @@ scaler = MinMaxScaler()
 train = pd.read_csv("train.csv", encoding="ISO-8859-1")
 test = pd.read_csv("test.csv", encoding="ISO-8859-1")
 
+
+for c in test.columns:
+    if len(test[c].unique()) < 10 and len(test[c].unique()) > 2:
+        i = 0
+
+        uni_values = list(set(test[c].unique()) | set(train[c].unique()))
+        print(uni_values)
+
+        for label in uni_values:
+            test[c][test[c] == label] = np.float64(i)
+            train[c][train[c] == label] = np.float64(i)
+            i += 1
+
+        test[c] = test[c].astype(np.float64)
+        train[c] = train[c].astype(np.float64)
+
+print(test.dtypes)
+
 train = train.set_index(["ticket_id"])
 test = test.set_index(["ticket_id"])
 test = test.drop("non_us_str_code", axis=1)
@@ -62,32 +80,9 @@ def blight_model():
 
     y_prediction_abs = np.float64(y_prediction >= 0.5)
 
-    #print_stats(y_test, y_prediction_abs)
-
-    return pd.Series(data=model.predict(test), index=test.index)
-
-
-def blight_model_2():
-    model = RandomForestRegressor(max_features=5)
-
-    model.fit(X_train_scaled, y_train)
-    y_prediction = model.predict(X_test_scaled)
-
-    y_prediction_abs = np.float64(y_prediction >= 0.5)
     print_stats(y_test, y_prediction_abs)
 
-    return model.predict(test_scaled)
-
-
-def blight_model_3():
-    model = GradientBoostingRegressor()
-    model.fit(X_train_scaled, y_train)
-    y_prediction = model.predict(X_test_scaled)
-
-    y_prediction_abs = np.float64(y_prediction >= 0.5)
-    print_stats(y_test, y_prediction_abs)
-
-    return model.predict(test_scaled)
+    return pd.Series(data=model.predict(test), index=test.index, name="compliance")
 
 
 print(blight_model())
