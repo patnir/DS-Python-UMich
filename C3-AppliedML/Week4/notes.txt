@@ -1,0 +1,92 @@
+Lecture 1: Naive Bayes Classifiers:
+	Assumption that each feature is independent 
+	Highly efficient learning and prediction
+	But generalization performance may be worse than sophisticated learning methods
+	Good for high dimension datasets
+
+Bernoulli: 
+	binary geatures, word presence and absence
+	Multinomical: discrete features
+	Gaussian: continuous/ real-valued features
+	Well-suited for textual data
+
+Gaussian: Assumes gaussian distribution represents all data
+
+"Check out partial fit for Bayes classifiers in sklearn"
+
+Used for High Dimentional Data
+
+Pros: 
+- Easy to understand
+- Simple, efficient parameter estimation
+- Works well with high-dimensional data
+- Often useful as a baseline comparison against more sophisticated methods
+
+Cons: 
+- Assumption that features are conditionally independent given the class is not realistics
+- As a result, other classifier types often have better generalization performance
+- Their confidence estimates for predictions are not very accurate
+
+Lecture 2: Random Forests
+
+Creating learning models known as ensembles: aggregating different learning models
+
+Average out individual mistakes and reduce overfitting
+
+Random Forests are an example
+- An ensemble of trees, not just one tree
+- Widely used, very good results on many problems
+sklearn.ensemble model
+
+Pros: 
+- Widely used, excellent prediction performance on many problems
+- doesn't require careful normalization of features or extensive parameter tuning
+- like decision trees, handles a mixture of feature types
+- easily parallelized across multiple CPUs
+
+Cons: 
+- resulting models are oftent difficult to interpret 
+- like decision trees, random forests may not be a good choice for a very high dimensional task compared to fast accurate linear models
+
+key parameters: 
+n_estimates: 
+max_features:
+max_Depth: 
+n_jobs: 
+
+Choose a fixed setting for the random_state parameter if you need reproducible results
+
+
+Lecture 3: Gradient Boosted Decision Trees
+
+They build a series of trees where each subsequent tree tries to correct the mistakes of the previous trees
+
+Lots of shallow trees (weak learners)
+Learning rate: high - more complex trees
+
+Reduce overfitting: reduce learning rate and reduce max depth
+
+
+Pros: 
+- often best off the shelo accuracy on many problems
+- using model for prediction requires only modest memory and is fast
+- deosn't require careful normalization of features to perform well
+- like decision trees, handles a mixture of feature types
+
+Cons: 
+- like random forests, the models are often difficult for humans to interpret
+- requires careful tuning of the learning rate and other parameters
+- training can require significant computation 
+- like decision trees, not recommended for text classification and other problems with very high dimensional sparse features, for accuracy and computational cost reasons
+
+Key parameters:
+n_estimators - sets number of trees
+learning_rate - controls emphasis on fixing errors from previous iteration
+n_estimators: 
+max_depth: 3-5 for most applications
+
+
+Lecture 4: Neural Networks
+
+
+
