@@ -26,4 +26,8 @@
 
 [Rules of Machine Learning: Best Practices for ML Engineering](http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf)
 
-[]
+[How Machines Make Sense of Big Data: an Introduction to Clustering Algorithms](https://medium.freecodecamp.org/how-machines-make-sense-of-big-data-an-introduction-to-clustering-algorithms-4bd97d4fbaba?gi=a033f3b1641b)
+
+[How to Use t-SNE Effectively](https://distill.pub/2016/misread-tsne/#citation)
+
+
