@@ -88,5 +88,58 @@ max_depth: 3-5 for most applications
 
 Lecture 4: Neural Networks
 
+Hidden layer: non linear sum of the input features into this layer
+
+Allows to learn more complex function. A lot more weights and coefficients. 
+
+Activation Functions: 
+RELU:  maps any negative input value to zero
+Hyperbolic Tangent Function: large values aer mapped to 1, and negative values to negative one
+
+Pros: 
+- They form the basis of state-of-the-art models and can be formed into advanced architectures that effectively capture complex features given enough data and computation
+
+Cons: 
+- Larger, more complex models require significant training time, data, and customization
+- Careful preprocessing of the data is needed 
+- A good chioce when the features are of similar types but less so when features of very different types 
+
+Important parameters: 
+hidden_layer_sizes: set of number of hidden layes and number of hidden units per layer
+alpha: controls weight on the regularization penalty that shrinks weights to zero
+activation: controls teh nonlinear function used for the activation functino including "relu", "logistic", "tanh"
+
+Deep Learning: 
+
+- Includes an automatic feature learning phase with a supervised learning pahse
+
+- The feature extraction phase uses a hierarchy of multiple feature extractino layers
+- Starting from primitive low, level features in the initial layer,each feature layer's output provides the input features to the next higher feature layer
+- ALl features are used in teh final supervised learning model
+
+
+Data Leakage: 
+- When the data you're using to train contains information about what you're trying to predict
+- Intorducing information about the target during training that would not legitimately be available during the actual use 
+Ex: including the label to be predicted as a feature, including test adata with trianing data
+- if you model perforamnce is too good to be true, it is probably due to "giveaway" features
+
+Detecting Data Leakage: 
+Before building the model: 
+- exploratory data analysis to find surprises in the data
+- are there features very highly correlated with the target value?
+After building the model: 
+- look for suprising feature behavior in the fitted model
+- are there features with very high weights, or high information gain?
+- simple rule-based models like decision trees can help with features like account numbers, patient ids
+- is overall model performance surprisingly good compared to known results on teh same dataset, or for similar problems on similar datasets?
+Limited real-world deployment of the trained model
+- potentially expensive in terms of development time, but more realistic
+- is the trained model generalizing well to new datA?
+
+Minimizing Data Leakage: 
+Perforamce data preparation withing each cross validation fold separaetly
+With time series data, use a timestamp cutoff
+Before any work with a new dataset, split off a final test validation dataset
 
 
