@@ -142,4 +142,45 @@ Perforamce data preparation withing each cross validation fold separaetly
 With time series data, use a timestamp cutoff
 Before any work with a new dataset, split off a final test validation dataset
 
+Unsupervised Learning: 
+
+Transformation: 
+- processes taht extract or compute information
+Clustering: 
+- find groups in the data
+- assign every point in the dataset to one of the grap hs
+
+Dimensionality reduction and manifold learning
+
+- Finds an approximate version of your dataset using fewer features
+- USed for exploring visualization a dataset to understand grouping or relationships
+- Often visualized using a 2-D sctterplot
+- Also used for compression, finding features for supervised learning
+
+Two-dimensional dataset to a 1-D approximation
+
+PCA - take your cloud of original data points and finds a rotation of it, so the dimensions are statistically uncorrelated. PCA then typically drops all but the most informative initial dimensions that capture most of the variation int he original dataset
+
+Highest variance - first principal
+
+Manifold learning algorithms are very good at finding low dimensional structure in high dimensional data and are very useful for visualizations.   
+
+t-SNE: a powerful manifold learning method that finds a 2d projection preserving information about neighbors
+
+Clustering: 
+
+Findind a way to divide a dataset into groups ("clusters")
+
+Data points within the same cluster should be 'close' or 'similar' in some way
+
+Clustering algorithms output a cluster membership index for each data point: 
+- hard clustering: each data point belongs to exactly one cluster
+- soft clustering: each data point is assigned a weight, score, or probability of menbership for each cluster. 
+
+k-means clustering
+
+Limitations: 
+- works well for simple clusters that are same size, well-separated, globular shapes
+- does not do well with irregular, complex clusters
+- variants of k-means like k-mediods can work with categorical features
 
