@@ -1,0 +1,69 @@
+len(text1) # The length of text1
+
+[w for w in text2 if len(w) > 3] # Words that are greater than 3 letters long in text2
+
+[w for w in text2 if w.istitle()] # Capitalized words in text2
+
+[w for w in text2 if w.endswith('s')] # Words in text2 that end in 's'
+
+len(set(text4))
+
+len(set([w.lower() for w in text4])) # .lower converts the string to lowercase.
+
+set([w.lower() for w in text4])
+
+s.isalpha()
+s.isdigit()
+s.alnum()
+
+s.splitlines()
+s.join(t)
+
+s.strip()
+
+s.find(t) Find t in s from the front
+s.rfind(t) Find t in s from the right
+
+f = open(“textfile.txt”, “r”)
+f.readline() # Read first line
+f.seek(0)
+textbody = f.read()
+
+f.close()
+f.closed #check if the file is closed or not 
+
+
+Regex: 
+
+. 
+^ - start of string
+$ - end of string
+[] - matches one of the set of characters within []
+[a-z] - matches one of the range of characters a,b,...,z
+[^abc] - matches a character that is not a,b, or c 
+a | b - matches either character
+() - Scoping for operators
+\t, \b, \n - Escape characters for special characters (\n, \b, \t)
+
+Meta-characters: repetitions
+*: matches zero or more occurrences
++ : matches one or more occurrences
+?: matches zero or one occurrences
+
+{n}: exactly n repetitions
+{n,}: at least n repetitions
+{m,n}: at least m and at most n repetitions
+
+ re.findall(r'[aeiou]', text12)
+re.findall(r'[^aeiou]', text12)
+
+ re.findall(r'\d{1,2}[/-]\d{1,2}[/-]\d{2,4}', dateStr) 
+['23-10-2002', '23/10/2002', '23/10/02', '10/23/2002']
+
+re.findall(r'\d{2} (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4}', dateStr)
+['23 Oct 2002']
+
+re.findall(r'\d{2} (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{4}', dateStr)
+['23 Oct 2002', '23 October 2002']
+
+
