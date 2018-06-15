@@ -43,7 +43,7 @@ def get_all_dates_named():
     return all_dates
 
 
-def test_func():
+def date_sorter():
     # t = "Lithium 0.25 (7/11/77). (7/11/77) LFTS wnl.  Urine tox neg.  Serum tox + fluoxetine 500; otherwise neg.  TSH 3.28.  BUN/Cr: 16/0.83.  Lipids unremarkable.  B12 363, Folate >20.  CBC: 4.9/36/308 Pertinent Medical Review of Systems Constitutional:"
     # curr2 = re.compile(r"(?P<month>\d{1,2})[/-](?P<day>\d{1,2})[/-](?P<year>\d{2}(?!\d)|[12]\d{3})")
     # for i in curr2.finditer(t):
@@ -82,11 +82,19 @@ def test_func():
                 curr = convert_date(y, year=d["year"], month=d["month"], monthname=None, day=None, day1=None)
         y += 1
         ans.append(curr)
-    ans = np.array(ans)
-    ans = ans[ans[:, 3].argsort()]
-    ans = ans[ans[:, 2].argsort()]
-    ans = ans[ans[:, 1].argsort()]
-    print(ans[:, 0])
+    # ans = np.array(ans)
+    # ans = ans[ans[:, 3].argsort(kind="mergesort")]
+    # ans = ans[ans[:, 2].argsort(kind="mergesort")]
+    # ans = ans[ans[:, 1].argsort(kind="quicksort")]
+    # for i in ans:
+    #     print(i)
+
+
+    ans = pd.DataFrame(data=ans)
+    ans.columns = ["d-index", "year", "month", "day", "total"]
+    # print()
+    ans = ans.sort_values(["total"])
+    return pd.Series(data=list(ans["d-index"]))
 
 
 def get_month_number(monthname):
@@ -140,13 +148,8 @@ def convert_date(index, year, month=None, monthname=None, day=None, day1=None):
     elif day1 is None:
         d = int(day)
 
-    return [index, y, m, d]
-
-def date_sorter():
-    print(get_all_dates())
-
-    return  # Your answer here
+    return [index, y, m, d, y * 365 + m * 31 + d]
 
 
-test_func()
+print(date_sorter())
 # print(df[72])
