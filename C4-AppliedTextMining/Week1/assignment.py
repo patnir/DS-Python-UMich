@@ -15,16 +15,19 @@ def date_sorter():
     i = 0
     for t in df:
         curr = re.findall(r'(?:\d{1,2} )?(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*[.,]?[ ]?(?:\d{1,2}[,]? )?[12]\d{3}', t)
-        curr2 = re.findall(r"\d{1,2}[/-]\d{1,4}(?:[/-]\d{2,4})?", t)
-        print(i, end="")
-        if len(curr) == 0:
+        curr2 = re.findall(r"\d{1,2}[/-]\d{1,2}[/-](?:\d{2}(?!\d)|[12]\d{3})|(?:\d{1,2}[/-])?[12]\d{3}", t)
+        print(str(i) + " ", end="")
+        if len(curr2) >= 2 or len(curr) >= 2:
+            print(t.strip())
+        elif len(curr) == 0:
+            print("f", end="")
             print(curr2)
         else:
-            print('f', end="")
             print(curr)
+
         i += 1
+
     return  # Your answer here
 
 
-print(date_sorter())
-print(df[381])
+date_sorter()
