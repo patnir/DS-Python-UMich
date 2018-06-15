@@ -67,3 +67,14 @@ re.findall(r'\d{2} (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{
 ['23 Oct 2002', '23 October 2002']
 
 
+Internationalization: 
+
+English is encoded with ASCII
+
+Unicode Transformational Format 
+Variable length encoding - one to four bytes
+Backward compatible with ASCII
+Dominant character encoding for the web
+
+
+
