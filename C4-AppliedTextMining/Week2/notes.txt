@@ -11,4 +11,9 @@ NLP Tasks:
 - Finding which pronoun refers to which entity
 
 NLTK: 
+POS tagging provides insights into the word classes/ types ina sentence
+Parsing the grammatical structures helps derivce meaning
+Both tasks are difficult, linguistic ambiguity increases teh difficulty eeven more
+Better models could be learned with supervised learning
+NLTK provdes access to tools and data for training
 
