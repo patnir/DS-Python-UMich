@@ -88,8 +88,6 @@ def date_sorter():
     # ans = ans[ans[:, 1].argsort(kind="quicksort")]
     # for i in ans:
     #     print(i)
-
-
     ans = pd.DataFrame(data=ans)
     ans.columns = ["d-index", "year", "month", "day", "total"]
     # print()
