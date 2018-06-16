@@ -1,0 +1,14 @@
+What is NLP?
+Any computation, manipulation of natural language
+Natural language evolve 
+
+NLP Tasks: 
+- Counting words, counting frequency of words
+- Part of speech taggin
+- Parsing the sentence structure
+- Identifying semantic roles
+- Identifying entities in a sentence
+- Finding which pronoun refers to which entity
+
+NLTK: 
+
