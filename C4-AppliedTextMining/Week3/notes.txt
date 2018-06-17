@@ -1,0 +1,95 @@
+Text Classification
+Supervised learning for text
+	
+Identifying Features from Text: 
+
+Types of textual features: 
+words: 
+	how to freqquent words like "the"
+	handling commonly-occurring words: stop words
+	normalization: make lower case vs leave as-is
+	stemming/ lemmatization
+
+Characteristics of words:
+	Capitalization
+Parts of speech of words in a sentence
+Grammatical structure, sentence parsing
+Grouping words of similar meaning, semantics
+	- buy, purchase
+
+Depending on classification tasks, features may come from inside words and word sequences
+- bigrams, trigrams, n-grams: "white house"
+- character sub-sequecnes in words: "ing", "ion"
+
+
+Naive Bayes Classifiers: 
+Probabilistic model: 
+- update the likelihood of the class given new information 
+Prior probability: pr(y = Entertainment), Pr(y=CS), Py(y=Zoology)
+
+Posterior probability: Pr(y=Entertainment|x="Python")
+
+Baye's rule: 
+Posterior probability = prior probability * likelihood / evidence
+
+Navie assumption: Given the calss label, features are assumed to be independent of each other
+
+Pr(y|X) = Pr(y) * Pr(X|y) / Pr(X)
+
+y* = argmax Pr(y|X) = argmax Pr(y) * product of Pr(xi|y)
+y* = which class does y belong to
+
+Prior probabilities[probability of each ofthe classes in your set of classes]: 
+	Pr(y) for all the y in Y (classes Y)
+Likelihood[The probability of seeing a particular feature in documents of class y]: 
+	Pr(xi|y) for all features xi and labels y in Y
+
+Learning Parameters: 
+Prior pronabilities: All the labels for the data
+	Count the number of instances in each class
+	If there are N instances in all and n out of those are labeled class y
+
+Likelihood: Pr(xi|y) for all features xi and labels y in Y
+	Count how many times feature xi appears in instances labeled as class y
+	If there are p instances of calss y, and xi appreas in k of those Pr(xi|y) = k / p 
+
+Naibe Bayes: Smoothing
+What happens if Pr(xi|y) = 0? When you never see Python, etc. 
+	Feature xi never occurs in documents labeled y 
+	But then, the posterior probability Pr(y|xi) will be 0
+	Instead, smooth the parameters
+	Laplace smoothing or Additive smoothing: add a dummy count
+		Pr(xi|y) = (k+1) / (p+n) where is in the number of features
+
+Naive Bayes Variations:
+	Multinomial Naive Bayes: Assuming that each are independent of each other and have multiple occurrences. 
+		Data follows a multinomial distribution
+		Each feature value is acount 
+	Bernouli Naive Bayes
+		Data follows a multivariate Bernoulli distribution 
+		Each feature is binary (word is present/ absent)
+
+
+SVMs: 
+	They are maximum-margin classifiers
+	SVM are linear classifiers that find a hyperplane to separate two classes of data: positive and negative
+	Parameter C:
+		Regularization: How much importance should you give individual data points as compared to better generalized model
+	
+	Larger values of c = less regularization
+		Fit training data as well as possible, every data point important
+	Smaller values of c = more regularization
+		More tolerant to errors on divididual data points
+	multi-class - ovr = over vs rest
+	class_weight - different classes can get different weights
+
+SVMs tend to be the most accurate classifiers especially in high dimensional data
+	Convert categorical features to numeric features
+	normalization
+Hyperplane hard to interpret
+
+Learning Text Classifiers in Python
+
+
+
+
