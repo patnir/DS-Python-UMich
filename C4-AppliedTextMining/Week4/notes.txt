@@ -23,9 +23,96 @@ Various ways to measure similarity in WordNet
 		LCS - lowest common subsumer
 		Lin Similarity (combination of above two)
 
+Strength os association between words
+- How frequent are there?
+	Not similar if two words don't occur together often
+- Also important to see hwo frequent are individual words
+
+Measure: Pointwise Mutual Information
 
 
+Topic Modeling: 
+	A coarse-level analysis of what's in a text collection
+	Topic: the subject (theme ) of a discourse
+	Topics are represented as a word distribution
 
+What's known: 
+	Text collection or corpus
+	Number of topics
+What's not known: 
+	The actual topics
+	Topic distribution for each document
 
+Essentially text clustering problems:
+	Documents and words are clustered simulatenously
+	What words come together or semantically related to each other?
+	What documents are closed to each other?
+	Different topci modeling approaches abailable:
+		- Probabilistic Latent Semantic Analysis
+		- Latent dirchlet allocation
 
+Generative Models and LDA: 
+	LCA: 
+		Generative model for document d
+		Choose a length 
+		Choose a mixture of topics for document 
+		Use a topic's mulitnomial distribution to output words to fill that topic's quota
 
+	Topic Modeling in Practice: 
+		How many topics? 
+			I believe that there are 5 topics... not a clear way to do this
+		Interpreting topics: 
+			Topics are word distributions
+			Making sense of words/ generating labels is subjective
+	Topic Modeling: 
+		Great tool for exploratory text analysis
+			- What are the documents (Tweets, reviews, news, articles) about? 
+	Pre-processing text: 
+		Tokenize, normalize
+		Stop word removal
+		Stemming
+
+Convert tokenized documents to a document term matrix
+	Build LDA models on the doc-term matrix
+
+Working with LDA in python
+	doc_Set: set of pre-processed text documents
+
+Infomration Extraction: 
+Goal: Identify and extract fields ofn interest from free text
+Fields of interest
+	Named entities
+		[NEWS] People, places, dates
+		[FINANCE] Money, companies
+		[MEDICINE] Disease, Drugs, Procedures
+	Relations: What happened to who, when, where
+
+Named Entity Recognition: 
+	Named entities: Noun phrases that are specific type and refer to specific individuals, places, organizations, ...
+	Named Entity Recognition: Techniques to identify all mentiones of pre-defined named entities in text
+		Identify the mention/ phrase: Boundary detection
+		Identify the type: Tagging/ classification
+Approcahes to identify named entities: 
+	Depends on kinds of entities that need to be identified
+	For well formatted fields like dat, phone numbers, regular expressions
+	For other fields: typically a machine learning approach 
+
+Standard NER task in NLP research community: 
+Typicaly four-class model
+	PER 
+	ORG
+	LOC/ GPE
+	Other/ Outside (any other class)
+
+Relation Extraction: 	
+	Identify relationships ebtween named entities
+Co-reference resolution: 
+	Disambiguate mentions and group mentions together
+Question answering task:
+	Given a question, find th emost appropriate answer from the text
+
+c) Pronunciation
+d) 1/7
+d) Nothing can be inferred
+d) all of the above
+b) the document corpus
