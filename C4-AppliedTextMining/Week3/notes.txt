@@ -88,9 +88,3 @@ SVMs tend to be the most accurate classifiers especially in high dimensional dat
 	normalization
 Hyperplane hard to interpret
 
-Learning Text Classifiers in Python
-
-
-
-
-

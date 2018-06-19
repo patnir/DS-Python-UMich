@@ -1,0 +1,31 @@
+Week 4: Topic, Modeling
+
+Semantic Text Similarity
+
+Applications: 
+	- Grouping similar words into semantic concepts
+	- As a building block in NL understanding tasks
+		Textual entailment: It says that the smaller sentence or one of two sentences derives its meaning or entails its meaning from another piece of text. 
+		Paraphrasing
+
+Wordnet: 
+	- Semantic dictionary of Enlsigh words, interlinked by semantic relatinos
+	- Includes rich linguistic information 
+		Parts of speech, word senses, synonyms, 
+	- Machine readable, freely available
+
+Various ways to measure similarity in WordNet
+	- WordNet organizes information in a hierarchy
+	i Many similarity measures use the hierarchy in some ways
+	- Verbs, nouns, adjectives all have separate hierarchies
+	Ways to measure: 
+		Path similarity
+		LCS - lowest common subsumer
+		Lin Similarity (combination of above two)
+
+
+
+
+
+
+
