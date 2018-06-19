@@ -20,3 +20,5 @@ corpus = gensim.matutils.Sparse2Corpus(X, documents_columns=False)
 # Mapping from word IDs to words (To be used in LdaModel's id2word parameter)
 id_map = dict((v, k) for k, v in vect.vocabulary_.items())
 
+ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=10, id2word=id_map, passes=25, random_state=34)
+
