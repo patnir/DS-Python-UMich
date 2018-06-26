@@ -1,0 +1,68 @@
+Clustering Coefficient
+
+Triadic Closure: 
+	The tendency for people who are connections in a social network to become connected. 
+	How can we measure the prevalance of triadic closure?
+	Local clustering coefficient: Fraction of pairs of node's friends that are friends with each other. 
+
+Global Clustering Coefficient: 
+	 1) nx.average_clustering(G), average local clustering coefficient over all nodes in the graph
+	 2) Measuring percentage of "open triads" or "triangles" in a network
+	 Transitivity: closed * 3 / open
+
+Transitivity vs Average Clustering Coefficient
+	Both measure the tendency for edges to form triangles
+	Transitivity weights nodes with large degree higher
+
+Distance Measures: 
+	How far is a node is from each other? 
+	WHich node is closest vs farthest from each other?
+
+Path: A sequnece of nodes connected by two nodes
+Distane between two nodes: shortest path length
+
+Finding the distance from node A to every other node
+Easy to do manually in small networks but tedious in large networks
+Bredth first search: a systemativ and efficient procedure for computing ditances from a node to all other nodes in a large network by "discovering" nodes in layers
+	T = nx.bfs_tree(G, "A")
+	T.edges() (all shortest paths)
+	nx.shortest_path_length(G, "A") (all shortest distances)
+
+Diamater: max distance between any pair of nodes
+Eccentricity: of node n is the largest distance between n and all other nodes
+nx.eccentricity(G)
+
+Radius: of a graph is the minimum eccentricity
+nx.radius(G)
+
+Periphery: of a graph is the set of nodes that have eccentricity equal to the diameter
+
+Center of a graph: eccentricity is equal to radius
+
+Connected Components: 
+
+An undirected graph is connected if for every pair of nodes, there is ap th between them
+
+Connected component: A subset of nodes that satisfies the following: 
+	- every node is the subject has a pth to every other node
+	- no other node has a pth to any node in the subset
+
+Connectivity in directed graphs: 
+	Strongly connected: G is strongly connected if for every pair of nodes u and v, there is a directed path from u to v and a directed path from v to u. 
+
+	Weakly connected: if replacing all directed edges with undirected edges produces a connected undirected graph. 
+
+Strongly connected component: 
+	- every node in the subset has a directed path to every other node
+	- no  other node has a directed path to nd from every node in the subset
+
+Network Robustness
+	Definition: the ability of a network to maintain its general structural properties when it faces failures or attacks
+	
+	Type of attacks: removal of nodes or edges
+
+	Structural properties: connectivity
+
+Robust networks have large minimum node and edge cuts
+
+	
