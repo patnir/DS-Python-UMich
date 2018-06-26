@@ -36,6 +36,30 @@ A pair of nodes can have different types of relationhships simultaneosly. Differ
 Bipartite Graphs: 
 L-bipartite graph projection: Network on nodes in a group L, where a pair of nodes is connected if they have a common neighbor in R in the bipartite graph. 
 
+Quiz answers: 
+1) 
+Weighted networks are used to describe networks with unequal relationships between nodes.
 
+When there are only two opposite relationships between nodes, a signed network is a good representation.
 
+2)Multi graph
+3)direted weighted netowrk
+4)
+Edges can carry many labels or attributes.
+
+Accessing node or edge attributes in NetworkX is the same as accessing values in a Python dictionary
+
+Suppose we have created a nx.Graph()object G with some nodes and edges. The statement G.nodes(data=True) will return a list of tuples.
+
+5) dictionary
+6)G.edge['A']['B'][0]['relation']
+7)
+Team member
+8)
+1,b
+3,e
+9)
+c
+10)
+3
 

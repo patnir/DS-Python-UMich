@@ -19,5 +19,26 @@ G1.add_edges_from([(0, 1),
                    (8, 9)])
 
 # draw the network G1
-nx.draw_networkx(G1)
-plt.show()
+# nx.draw_networkx(G1)
+
+
+# G=nx.MultiGraph()
+# G.add_node('A',role='manager')
+# G.add_edge('A','B',relation = 'friend')
+# G.add_edge('A','C', relation = 'business partner')
+# G.add_edge('A','B', relation = 'classmate')
+# G.node['A']['role'] = 'team member'
+# G.node['B']['role'] = 'engineer'
+#
+# print(G.nodes(data=True))
+
+G = nx.MultiGraph()
+G.add_node('A',role='manager')
+G.add_edge('A','B',relation = 'friend')
+G.add_edge('A','C', relation = 'business partner')
+G.add_edge('A','B', relation = 'classmate')
+G.node['A']['role'] = 'team member'
+G.node['B']['role'] = 'engineer'
+
+
+print(G.get_edge_data("A", "B", key={0, "relation"}))
