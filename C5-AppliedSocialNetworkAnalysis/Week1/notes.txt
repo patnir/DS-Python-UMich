@@ -1,0 +1,41 @@
+Social Networks: 
+Examples: 
+	Friendships in network in karate clubs
+	Human mobility network
+	Bus transportation
+
+Information NEtowrks: 
+	COmmunication between left and right wing political blogs
+	Internet connectivity
+	In general, there seems to be a lot of clustering
+
+SUmmary: Many complex structures can be modeled by networks
+
+Network Definition and Vocabulary
+
+Network (or graph): A representation of connections among a set of items
+	Items are called nodes
+	Connections are called edges
+
+2 kinds of edges: 
+	Undirected network
+	Directed network: edges have direction
+
+Weighted networks: 
+	Note all relationships are equal
+	Some edges carry higher weight than others
+
+Signed Network:
+	a network where edge are assigned positive or negatiev sign
+
+Edges can carry many other labels or attributes: friend, coworker, family, etc
+
+Multigraphs: 
+A pair of nodes can have different types of relationhships simultaneosly. Different edges between a pair of graphs
+
+Bipartite Graphs: 
+L-bipartite graph projection: Network on nodes in a group L, where a pair of nodes is connected if they have a common neighbor in R in the bipartite graph. 
+
+
+
+
