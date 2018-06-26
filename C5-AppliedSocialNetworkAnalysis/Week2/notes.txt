@@ -65,4 +65,39 @@ Network Robustness
 
 Robust networks have large minimum node and edge cuts
 
-	
+Quiz solutions:
+1) 0.7	
+2) Network (A) has higher average local clustering coefficient but lower transitivity than (B).
+
+3) The radius of this network is half of its diameter.
+
+The deletion of node G will make the network disconnected.
+
+If we perform Breadth-First Search (BFS) from node A, the BFS tree we obtain will have a depth of 4.
+
+(Incorrect)
+
+4)
+all four (Incorrect)
+
+5)Only network (B) is a strongly connected graph.
+
+We only need to add one directed edge in order to change network (C) to a strongly connected graph.
+
+
+6)The closure of an airport and the cancellation of a flight route are examples of two different kinds of network attacks in the real world.
+
+Network robustness measures a network’s ability to maintain its connectivity.
+
+Adding edges to a network can never make the network less robust.
+
+
+
+7) 1
+8) 2
+9) 8
+10) 
+Removing node F and H
+Removing edges (H,K) and (E,F)
+
+
