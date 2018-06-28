@@ -1,0 +1,36 @@
+Degree and Closeness Centrality:
+Network centrality: 
+	Centrality measures identigy the most important nodes in a netowrk
+
+Degree centrality: 
+	Important nodes have many connections
+	The most basic measure of centrality: number of neighbors
+	Undirected networks: use degree
+	Directed networks: use in degree or out degree
+
+Closeness centrality: 
+	Important nodes are close to other nodes
+	closeCent = nx.closeness_centrality(G)
+
+Betweenness centrality: 
+Assumption: important nodes connect other nodes
+Recall: the distance between two nodes is the length of the shortest path between them. 
+
+Normalization: Divide by number of pairs of nodes
+Approximation: COmputing betweenness centrality can be computationally expensive, we can approximate computation by taking a subset of nodes
+Subsets: we can define substs of source and target nodes to compute betweenness centrality
+Edge betweenness centrality: we can apply the same framework to find important edges instead of nodes
+
+
+Basic Page Rank: 
+
+Assigns a score of important to each node. Important nodes are those with many in-links from important pages. Mainly used for directed networks. Rank depends on the pagerank of other nodes. 
+
+1) All node start with pagerank of 1/n
+2) perform the basic pagerank update rule k times
+	- each node gives an equal share of its current pagerank to all the nodes it links to 
+	- the new pagerank of each node is the sum of all pagerank it received from other nodes
+
+Nodes with fewer in-degrees may have a high Page Rank when they are connected to a more important node.
+
+
