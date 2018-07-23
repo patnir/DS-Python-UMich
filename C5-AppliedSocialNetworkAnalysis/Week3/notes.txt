@@ -33,4 +33,4 @@ Assigns a score of important to each node. Important nodes are those with many i
 
 Nodes with fewer in-degrees may have a high Page Rank when they are connected to a more important node.
 
-
+[["A","B"],["A","C"],["B","D"],["C","D"],["C","E"],["D","E"],["D","G"],["E","G"],["F","G"]]
