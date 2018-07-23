@@ -32,3 +32,35 @@ def answer_four():
 G2 = nx.read_gml('blogs.gml')
 
 
+def answer_five():
+    pg = nx.pagerank(G2, alpha=0.85)
+    return pg["realclearpolitics.com"]
+
+
+def answer_six():
+    # Your Code Here
+    import operator
+    pg = nx.pagerank(G2, alpha=0.85)
+    return [a for a, b in sorted(pg.items(), key=operator.itemgetter(1), reverse=True)[0:5]]
+
+
+def answer_seven():
+    # Your Code Here
+    hits = nx.hits(G2)
+    return hits[0]["realclearpolitics.com"], hits[1]["realclearpolitics.com"]
+
+
+def answer_eight():
+    import operator
+    hits = nx.hits(G2)
+    return [a for a, b in sorted(hits[0].items(), key=operator.itemgetter(1), reverse=True)[0:5]]
+
+
+
+def answer_nine():
+    import operator
+    hits = nx.hits(G2)
+    return [a for a, b in sorted(hits[1].items(), key=operator.itemgetter(1), reverse=True)[0:5]]
+
+
+
