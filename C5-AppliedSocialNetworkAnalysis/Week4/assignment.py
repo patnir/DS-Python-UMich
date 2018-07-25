@@ -48,21 +48,35 @@ hits = nx.hits(G)
 pageRank = nx.pagerank(G, alpha=0.85)
 
 
-def salary_predictions():
+def train_test_data():
     test_nodes = []
-    #     print(nx.average_clustering(G))
+    train_nodes = []
+    train_data = np.empty((0, 9), float)
+    test_data = np.empty((0, 8), float)
+    columns = np.array(
+        ["Node", "Degree", "DegreeCent", "CloseCent", "BetCent", "Hub", "Authority", "PageRank", "ManagementSalary"])
     for node in G.nodes():
         currMS = G.node[node]["ManagementSalary"]
-        train_nodes = []
         degree = G.degree()
         if currMS == 1 or currMS == 0:
-            print(str(node) + " " + str(currMS))
-            print("Degree {} Closeness {} Betweenness {}".format(degCent[node], closeCent[node], betCent[node]))
-            print("Hub {} Authority {} PageRank {}".format(hits[0][node], hits[1][node], pageRank[node]))
+            train_nodes.append(node)
+            train_data = np.append(train_data, np.array([[node, degree[node], degCent[node], closeCent[node],
+                                                          betCent[node], hits[0][node], hits[1][node], pageRank[node],
+                                                          currMS]]), axis=0)
         else:
             test_nodes.append(node)
+            test_data = np.append(test_data, np.array([[node, degree[node], degCent[node], closeCent[node],
+                                                        betCent[node], hits[0][node], hits[1][node], pageRank[node]]]),
+                                  axis=0)
+    train = pd.DataFrame(train_data, columns=columns)
+    test = pd.DataFrame(test_data, columns=columns[:-1])
+    print(test.head())
+    return train_data, test_data
 
-    return  # Your Answer Here
+
+def salary_predictions():
+    train, test = train_test_data()
+    return
 
 
 salary_predictions()
