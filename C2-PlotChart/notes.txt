@@ -1,0 +1,57 @@
+This is my second take of this class. I want to get better at Data Visualization and gonna keep at it. 
+
+Week 1 Notes: 
+PRINCIPLES OF INFORMATION VISUALIZATION
+
+Introdction Lecture: 
+    Info Vis: THeoretical basis for best practices
+    Alberto Cairo and Edward Tufty
+
+Tools for Thinking about Design (Alberto Cairo):
+
+    Vis Wheel: Compare ways of visualizing information 
+        Abstraction vs FIguration 
+        Functionality vs Decoration
+        Density of info vs Lightness of info
+        Multidimensional vs Unidimensional
+        Originality vs Familiarity
+        Novelty vs Redundancy
+
+Graphical heuristics: Data-ink ratio (Edward Tufte)
+
+    Data-ink Ratio: Not erasable core of a graph 
+        Amount of data ink / total area of graphic
+        Remove elements of redundant information
+
+Graphical heuristics: Chart junk (Edward Tufte): 
+
+    Chart Junk: 
+        Bad: Stripes, Grids
+        Good: Directly labeling data
+    Lie Factor and Spark Lines: 
+        Spark Lines: Where trends and distributions of data is important
+
+The Truthful Art (Alberto Cairo): 
+    5 part framework for qualities of information: 
+    - Truthful
+    - Functionality
+    - Beauty
+    - Insightful
+    - Enlightening
+
+
+Week 2: Basic Charting
+
+Matplotlib Architecture: 
+    Backend Layer: 
+        Deals with the rendering of plots to screen or files
+    Artist Layer: 
+        Contains contrainers such as Figure, Subplot and Axes
+        Contains primitives such as Line2D and Rectangle, and collections, such as PathCollection
+    Scripting Layer: 
+        Simplifies access to the Artist and Backend Layer
+
+
+
+
+    
